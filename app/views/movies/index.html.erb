@@ -1,0 +1,19 @@
+<h1>The Whole List!</h1>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Year</th>
+		<th colspan=2></th>
+	</tr>
+	<% @movies.each do |m| %>
+		<tr>
+			<td><%= m.title %></td>
+			<td><%= m.year %></td>
+			<td><%= link_to 'Edit', edit_movie_path(m) %></td>
+			<td><%= link_to 'Delete', movie_path(m), method: :delete, data: {confirm:'Are you sure?'} %></td>
+		</tr>
+	<% end %>
+</table>
+<%= link_to "Home", controller: 'welcome' %>
+<%= link_to "Add a movie to the list!", new_movie_path %>

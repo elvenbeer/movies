@@ -1,0 +1,29 @@
+<%= form_for @movie do |m| %>
+
+	<% if @movie.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@movie.errors.count, 'error') %> detected:
+			</h2>
+			<ul>
+				<% @movie.errors.full_messages.each do |e| %>
+					<li><%= e %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<p>
+		<%= m.label :title %><br>
+		<%= m.text_field :title %>
+	</p>
+
+	<p>
+		<%= m.label :year %></br>
+		<%= m.text_field :year %>
+	</p>
+
+	<p>
+		<%= m.submit %>
+	</p>
+<% end %>

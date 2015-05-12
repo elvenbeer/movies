@@ -1,0 +1,13 @@
+<p>
+	<strong>Year:</strong>
+	<%= @movie.year %>
+</p>
+
+<p>
+	<strong>Title:</strong>
+	<%= @movie.title %>
+</p>
+
+<%= link_to 'New Review', new_movie_review_path(@movie) %><br>
+<%= link_to "List", movies_path %>
+<%= link_to "Edit", edit_movie_path(@movie) %>
